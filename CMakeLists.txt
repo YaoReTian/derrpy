@@ -5,7 +5,10 @@ project(derrpy LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(derrpy main.cpp)
+add_executable(derrpy main.cpp
+    dataerr.h dataerr.cpp
+    unit.h unit.cpp
+)
 
 include(GNUInstallDirs)
 install(TARGETS derrpy
