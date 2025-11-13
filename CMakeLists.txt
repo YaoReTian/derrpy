@@ -8,6 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(derrpy main.cpp
     dataerr.h dataerr.cpp
     unit.h unit.cpp
+
+
+
+
 )
 
 include(GNUInstallDirs)

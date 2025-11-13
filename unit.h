@@ -21,7 +21,9 @@ public:
     Unit(float MExp = 0, float LExp = 0, float TExp = 0, float KExp = 0, float CExp = 0, float NExp = 0, float JExp = 0);
     Unit(float exps[7]);
     ~Unit();
+    void operator=(Unit other);
     bool operator==(Unit other);
+    bool operator!=(Unit other);
     Unit operator*(Unit other);
     Unit operator/(Unit other);
     Unit operator^(float num);
@@ -44,7 +46,7 @@ private:
     std::string formatExp(int index);
 
     float m_exps[7];
-    std::string m_unitSymbol;
+    std::string m_unitSymbol = "";
     std::string DIMENSION[7] = {"M","L","T","K","I","N","J"};
 
     std::string SI_BASE_UNIT[7] = {"kg", "m", "s","K","A","mol","cd"};

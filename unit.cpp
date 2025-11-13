@@ -15,16 +15,36 @@ Unit::~Unit()
 
 // Operators
 
+void Unit::operator=(Unit other)
+{
+    for (int i = 0; i < 7; i++)
+    {
+        m_exps[i] = other.expOf(i);
+    }
+}
+
 bool Unit::operator==(Unit other)
 {
     for (int i = 0; i < 7; i++)
     {
-        if (m_exps[i] != other.units()[i])
+        if (m_exps[i] != other.expOf(i))
         {
             return false;
         }
     }
     return true;
+}
+
+bool Unit::operator!=(Unit other)
+{
+    for (int i = 0; i < 7; i++)
+    {
+        if (m_exps[i] != other.expOf(i))
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 Unit Unit::operator*(Unit other)
@@ -111,6 +131,11 @@ std::string Unit::dimensions()
         }
     }
 
+    if (str == "")
+    {
+        str = "unitless";
+    }
+
     return str;
 }
 
@@ -129,6 +154,11 @@ std::string Unit::units()
         }
     }
 
+    if (str == "")
+    {
+        str = "unitless";
+    }
+
     return str;
 }
 
@@ -145,6 +175,11 @@ std::string Unit::latex()
         {
             str += SI_BASE_UNIT[i] + "^{" + formatExp(i) + "} ";
         }
+    }
+
+    if (str == "")
+    {
+        str = "unitless";
     }
 
     str += "$";
@@ -183,6 +218,7 @@ std::string Unit::formatExp(int index)
     {
         i--;
     }
+
     return pm + val.substr(0,i);
 }
 
