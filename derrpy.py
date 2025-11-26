@@ -4,12 +4,15 @@
 Created on Wed Nov 26 11:10:09 2025
 
 @author: YaoReTian / Martin Yiu 
+
+derrpy.py
 """
 
 import numpy as np
 
 # Static functions
 def formatSciNum(num : float, sigfig : int) -> str:
+    """Formats a number in standard form with significant figures"""
     if num == 0:
         return "0."+'0'*(sigfig-1)
     
@@ -211,7 +214,6 @@ class Unit:
                 exps.append(self.__exps[i]*other)
             return Unit(scale, sym, exps)
 
-
 class DataErr:
     """Data type including both the value and uncertainty"""
     def __init__(self, val : float = 0,
@@ -397,4 +399,4 @@ class DataErr:
         
     def __neg__(self):
         return DataErr(-self.__val, self.__err, self.__unit, self.__name, self.__sigfig)
-    
+
