@@ -24,5 +24,5 @@ setup (
        url = "https://github.com/YaoReTian/derrpy",
        packages = find_packages(),
        ext_modules= extensions,
-       install_requires=['numpy>=']
+       install_requires=['numpy']
 )
