@@ -17,10 +17,12 @@ extensions = cythonize(Extension(
              sources = src
       ))
 
-kwargs = {
-       "name": "derrpy",
-       "packages": find_packages(),
-       "ext_modules": extensions
-      }
-
-setup(**kwargs)
+setup (
+       name = "derrpy",
+       version = "0.1.0",
+       author = "YaoReTian",
+       url = "https://github.com/YaoReTian/derrpy",
+       packages = find_packages(),
+       ext_modules= extensions,
+       install_requires=['numpy>=']
+)

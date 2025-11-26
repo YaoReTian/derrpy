@@ -3,7 +3,7 @@
 """
 Created on Wed Nov 26 11:10:09 2025
 
-@author: YaoReTian / Martin Yiu 
+@author: YaoReTian
 
 derrpy.py
 """
