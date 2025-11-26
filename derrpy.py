@@ -27,8 +27,11 @@ def formatSciNum(num : float, sigfig : int) -> str:
     
     mag = int(np.floor(np.log10(np.abs(num))))
     val = str(num / (10**mag))
-    val += "0"*sigfig
-    val = val[0:sigfig+1]
+    if sigfig == 1:
+        val = val[0]
+    else:
+        val += "0"*sigfig
+        val = val[0:sigfig+1]
     
     return val + "E" + str(mag)
 
