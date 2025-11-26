@@ -481,7 +481,7 @@ class DataErr:
         
         Returns a string of the name, value, error and units of `derr` in scientific format"""
         v = formatSciNum(self.__val, self.__sigfig);
-        e = formatSciNum(self.__err, self.__sigfig);
+        e = formatSciNum(self.__err, 1);
 
         return f"{self.__name} / {self.__unit.units()} : {v} +/- {e}"
             

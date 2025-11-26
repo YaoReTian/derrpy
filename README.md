@@ -25,7 +25,7 @@ print(data3)
 The above code outputs:
 
 ```
-Null / unitless : 1.50E3 +/- 2.57E2
+Null / unitless : 1.50E3 +/- 2E2
 ```
 
 `Null` is the default name for any DataErr object, which can be changed either during instantiation or during runtime using `DataErr.setName()`. Similarly, all values are set to 3 significant figures by default, which can also be changed in the same way as the name using `DataErr.setSigFig()` or during instantiation
@@ -45,7 +45,7 @@ print(data1)
 The above code outputs:
 
 ```
-Null / m : 5.00E1 +/- 2.00E0
+Null / m : 5.00E1 +/- 2E0
 ```
 
 The `dp.Unit` class takes in an array of 7 elements at maximum, in which an index represents the exponent of the below dimensions in SI units:  
@@ -69,7 +69,7 @@ print(data1)
 The above code outputs
 
 ```
-Null / km : 5.00E-2 +/- 2.00E-3
+Null / km : 5.00E-2 +/- 2E-3
 ```
 
 ### Using derrpy with matplotlib or numpy
@@ -99,3 +99,6 @@ Copy and run the below code in the command line
     python3 setup.py build_ext --inplace
 
 This creates a `.so` file which is the library, and can be copied into any directory to be used.
+
+## To be added
+ - Support for more standard functions, e.g. sin(x) or log(x)
